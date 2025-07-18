@@ -31,46 +31,37 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-background overflow-hidden">
-        {/* Background glow effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-corporate-purple-glow rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-corporate-purple rounded-full opacity-20 blur-2xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-corporate-purple-glow rounded-full opacity-25 blur-3xl"></div>
-        </div>
+        {/* Background gradient effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-corporate-purple-dark/20 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-corporate-purple/10 to-transparent"></div>
+        
+        {/* Subtle glow effects */}
+        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-corporate-purple/30 rounded-full opacity-40 blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-corporate-purple-glow/20 rounded-full opacity-30 blur-2xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-corporate-purple/25 rounded-full opacity-35 blur-3xl"></div>
 
-        {/* Curved container with glow */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
-          <div className="relative">
-            {/* Curved background box with glow */}
-            <div className="absolute inset-0 transform -skew-y-1 bg-card border border-border rounded-3xl shadow-glow-purple-strong"></div>
-            <div className="absolute inset-0 transform -skew-y-1 bg-gradient-to-br from-corporate-purple-light/20 to-transparent rounded-3xl"></div>
-            
-            {/* Content */}
-            <div className="relative text-center py-20 px-8">
-              <h1 className="text-7xl md:text-9xl font-bold mb-8 text-foreground tracking-wider">
-                B<span className="text-corporate-purple-glow">1</span>G
-                <span className="block text-6xl md:text-8xl mt-4 text-corporate-purple-glow">
-                  CORPORATION
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-3xl mx-auto">
-                Leading the digital transformation revolution with innovative solutions
-                that empower businesses to achieve extraordinary results.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button asChild size="lg" className="bg-corporate-purple hover:bg-corporate-purple-glow shadow-glow-purple">
-                  <Link to="/products">
-                    Explore Products <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-corporate-purple text-corporate-purple hover:bg-corporate-purple hover:text-primary-foreground">
-                  <Link to="/partner">
-                    Become a Partner
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 text-foreground tracking-wider">
+            <span className="bg-gradient-to-r from-corporate-purple-glow to-primary bg-clip-text text-transparent">
+              B1G CORPORATION
+            </span>
+          </h1>
+          
+          <p className="text-lg md:text-xl lg:text-2xl mb-12 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Elevate your site's visibility effortlessly with AI, where
+            smart technology meets user-friendly SEO tools.
+          </p>
+          
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-background text-foreground border border-border hover:bg-muted transition-all duration-300 px-8 py-3 text-lg font-medium"
+          >
+            <Link to="/partner">
+              JOIN US
+            </Link>
+          </Button>
         </div>
       </section>
 
