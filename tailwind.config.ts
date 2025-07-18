@@ -56,6 +56,7 @@ export default {
 					purple: 'hsl(var(--corporate-purple))',
 					'purple-light': 'hsl(var(--corporate-purple-light))',
 					'purple-dark': 'hsl(var(--corporate-purple-dark))',
+					'purple-glow': 'hsl(var(--corporate-purple-glow))',
 					grey: 'hsl(var(--corporate-grey))',
 					'grey-light': 'hsl(var(--corporate-grey-light))',
 					'grey-dark': 'hsl(var(--corporate-grey-dark))'
@@ -70,6 +71,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			boxShadow: {
+				'glow-purple': 'var(--glow-purple)',
+				'glow-purple-strong': 'var(--glow-purple-strong)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

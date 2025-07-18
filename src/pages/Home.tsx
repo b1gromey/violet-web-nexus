@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Zap, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import heroImage from "@/assets/hero-image.jpg";
 
 const Home = () => {
   const features = [
@@ -31,31 +30,46 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-primary/60"></div>
-        <div className="relative z-10 text-center text-primary-foreground max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Empowering Your
-            <span className="block text-accent">Digital Future</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-            Leading corporate technology solutions that drive innovation,
-            efficiency, and sustainable growth for modern enterprises.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link to="/products">
-                Explore Products <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <Link to="/partner">
-                Become a Partner
-              </Link>
-            </Button>
+      <section className="relative h-screen flex items-center justify-center bg-background overflow-hidden">
+        {/* Background glow effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-corporate-purple-glow rounded-full opacity-30 blur-3xl"></div>
+          <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-corporate-purple rounded-full opacity-20 blur-2xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-corporate-purple-glow rounded-full opacity-25 blur-3xl"></div>
+        </div>
+
+        {/* Curved container with glow */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
+          <div className="relative">
+            {/* Curved background box with glow */}
+            <div className="absolute inset-0 transform -skew-y-1 bg-card border border-border rounded-3xl shadow-glow-purple-strong"></div>
+            <div className="absolute inset-0 transform -skew-y-1 bg-gradient-to-br from-corporate-purple-light/20 to-transparent rounded-3xl"></div>
+            
+            {/* Content */}
+            <div className="relative text-center py-20 px-8">
+              <h1 className="text-7xl md:text-9xl font-bold mb-8 text-foreground tracking-wider">
+                B<span className="text-corporate-purple-glow">1</span>G
+                <span className="block text-6xl md:text-8xl mt-4 text-corporate-purple-glow">
+                  CORPORATION
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-3xl mx-auto">
+                Leading the digital transformation revolution with innovative solutions
+                that empower businesses to achieve extraordinary results.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button asChild size="lg" className="bg-corporate-purple hover:bg-corporate-purple-glow shadow-glow-purple">
+                  <Link to="/products">
+                    Explore Products <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-corporate-purple text-corporate-purple hover:bg-corporate-purple hover:text-primary-foreground">
+                  <Link to="/partner">
+                    Become a Partner
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
